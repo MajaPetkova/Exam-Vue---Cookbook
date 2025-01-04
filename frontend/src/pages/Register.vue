@@ -57,10 +57,6 @@ async function onRegister() {
         {{ error.$message }}
       </div>
     </div>
-    <!-- <div>
-      <label for="repass">Repeat Password</label>
-      <input id="repass" type="password">
-    </div> -->
     <button class="btn">Submit</button>
   </form>
 </template>
