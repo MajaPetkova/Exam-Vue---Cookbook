@@ -2,7 +2,7 @@
 
 <template>
   <h2> Login Page</h2>
-  <div class="register-container">
+  <form class="register-container">
     <div>
       <label for="">Email</label>
       <input type="email">
@@ -15,7 +15,7 @@
     <button class="btn">
       Submit
     </button>
-  </div>
+  </form>
 </template>
 
 <style scoped>
@@ -26,7 +26,7 @@ h2{
 .register-container{
     padding: 1rem;
     margin-bottom: 1.5rem;
-    margin: 0.75rem auto;
+    margin: 3rem auto;
     max-width: 640px;
     box-shadow: 4px -5px 24px -7px rgba(0,0,0,0.75);
 }
