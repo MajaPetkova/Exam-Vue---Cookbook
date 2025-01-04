@@ -1,7 +1,8 @@
 <script setup>
 // import { useRouter } from 'vue-router';
 
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useUserStore } from '../stores/useUserStore';
 
 const LINKS = [{
   label: 'Home',
@@ -20,6 +21,9 @@ const LINKS = [{
   name: 'login',
 }];
 const isActive = ref(false);
+const userStore = useUserStore();
+// console.log(userStore.user.data.username);
+const username = computed (() => userStore.user?.data?.username ?? '');
 
 function onSelect(name) {
   isActive.value = isActive.value === name ? '' : name;
@@ -37,7 +41,12 @@ function onSelect(name) {
             {{ link.label }}
           </li>
         </router-link>
+        <!-- <p>{{ userName }}</p> -->
       </ul>
+    </div>
+    <div class="user" v-if="username">
+      <p>Hello, {{ username }}</p>
+      <button class="btn" >Logout</button>
     </div>
   </div>
   <div class="br"></div>
@@ -79,5 +88,17 @@ ul li{
 .logo{
   height: 100px;
   width: 100px;
+}
+.btn{
+  background-color: #840e0b;
+  padding: 0.4rem 0.75rem;
+}
+p{
+  color: #830c0b;
+}
+.user{
+  display: flex;
+  align-items: center;
+  gap:1rem
 }
 </style>

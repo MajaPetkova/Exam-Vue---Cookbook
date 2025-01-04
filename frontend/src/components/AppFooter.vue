@@ -1,6 +1,6 @@
 <template>
   <div class="footer-container">
-    <h4>Mama's Kitchen</h4>
+    <h4>Mama's <b>Kitchen</b></h4>
     <div class="footer">
       <div class="icons">
         <h3>Follow us</h3>
