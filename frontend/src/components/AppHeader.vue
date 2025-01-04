@@ -40,6 +40,7 @@ function onSelect(name) {
       </ul>
     </div>
   </div>
+  <div class="br"></div>
 </template>
 
 <style scoped>
@@ -61,6 +62,12 @@ ul li{
   text-decoration: none;
   color: #830c0b;
   list-style: none;
+}
+.br{
+  width: 80%;
+  margin: 0 auto;
+  height: 2px;
+  background-color:#840e0b
 }
 .active{
   background-color:#840e0b ;

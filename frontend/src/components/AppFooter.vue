@@ -23,55 +23,61 @@
 
 <style>
 .footer-container {
-    padding: 1rem;
-    background-color: rgb(105, 9, 9);
-    bottom: 0px;
-    height:240px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+  padding: 1rem;
+  background-color: rgb(105, 9, 9);
+  height: 240px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  /* position:relative; */
 }
-.footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    padding: 0 5rem ;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0 5rem;
 }
+
 h4 {
-    text-align: center;
-    color: aliceblue;
-    font-family: "Dancing Script";
-    font-size: 1.5rem;
+  text-align: center;
+  color: aliceblue;
+  font-family: "Dancing Script";
+  font-size: 1.5rem;
 }
 
 .icons {
-    text-align: left;
+  text-align: left;
 }
-p{
-    color: aliceblue;
-    font-size: 0.75rem;
+
+p {
+  color: aliceblue;
+  font-size: 0.75rem;
 }
+
 h3 {
-    color: aliceblue;
-    font-weight: 100;
-    padding-left: 0.4rem;
+  color: aliceblue;
+  font-weight: 100;
+  padding-left: 0.4rem;
 }
-.learn-more{
-display: flex;
-flex-direction: column;
-color: aliceblue;
-text-align: center;
+
+.learn-more {
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  text-align: center;
 
 }
+
 h6 {
-    text-align: center;
-    color: black
+  text-align: center;
+  color: black
 }
 
 i {
-    color: aliceblue;
-    font-size: 30px;
-    padding: 0.4rem;
+  color: aliceblue;
+  font-size: 30px;
+  padding: 0.4rem;
 }
 </style>
