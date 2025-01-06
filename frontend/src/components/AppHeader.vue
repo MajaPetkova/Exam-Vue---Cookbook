@@ -11,9 +11,6 @@ const LINKS = [{
   label: 'About',
   name: 'about',
 }, {
-  label: 'Create',
-  name: 'create',
-}, {
   label: 'Register',
   name: 'register',
 }, {
@@ -43,9 +40,12 @@ function onSelect(name) {
         </router-link>
         <!-- <p>{{ userName }}</p> -->
       </ul>
+
       <div class="user" v-if="username">
+        <router-link to="create" :class="[create === isActive ? 'active' : ''] ">Create</router-link>
+     
         <p>Hello, {{ username }}</p>
-        <button class="btn" >Logout</button>
+        <button @click="userStore.logout" class="btn">Logout</button>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@ function onSelect(name) {
 }
 .nav-links{
   display: flex;
-  justify-content:right;
+  justify-content:space-between;
   align-items: center;
   gap:1.5rem;
   text-decoration: none;
@@ -100,5 +100,8 @@ p{
   display: flex;
   align-items: center;
   gap:1rem
+}
+.btn{
+  border: none;
 }
 </style>

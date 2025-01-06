@@ -29,6 +29,7 @@ async function onRegister() {
   else {
     await userStore.registerUser(formData.value);
     // await userStore.loginUser(form.value);
+    // console.log(formData)
   }
 }
 </script>

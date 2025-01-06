@@ -2,6 +2,7 @@
 import { useVuelidate } from '@vuelidate/core';
 import { minLength, required } from '@vuelidate/validators';
 import { computed, ref } from 'vue';
+import router from '../config/router';
 import { useUserStore } from '../stores/useUserStore';
 
 const userStore = useUserStore();
@@ -25,8 +26,7 @@ async function onLogin() {
   }
   else {
     await userStore.loginUser(formData.value);
-    // console.log(formData.value.username)
-    // localStorage.setItem('token', formData.value.accessToken);
+    // localStorage.setItem('authToken', formData.value.accessToken);
   }
 }
 </script>

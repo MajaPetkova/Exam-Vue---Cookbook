@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+import router from '../config/router';
 import { accessUser, authenticateUser } from '../services/auth';
 
 export const useUserStore = defineStore('userStore', () => {
@@ -13,22 +14,28 @@ export const useUserStore = defineStore('userStore', () => {
       return false;
 
     user.value = profile;
-    // router.push({ component: 'Home' });
+    localStorage.setItem('authToken', profile.data.accessToken);
+    router.push('/home');
   }
-
+  
   async function loginUser(formData) {
     const profile = await accessUser(formData);
     if (!profile)
       return false;
     user.value = profile;
+    localStorage.setItem('authToken', profile.data.accessToken);
+    router.push('/home');
+    // console.log(profile.data.accessToken);
   }
-  // async function logout(){
-  //   // 
-  // }
+  async function logout() {
+    user.value = null;
+    localStorage.removeItem ('authToken');
+  }
 
   return {
     user,
     registerUser,
     loginUser,
+    logout
   };
 });
