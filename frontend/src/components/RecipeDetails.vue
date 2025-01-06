@@ -5,14 +5,9 @@ import { useRoute } from 'vue-router';
 import { useFetch } from '../composables/useFetch';
 
 const route = useRoute();
-const data = ref({});
-const id = route.params.id;
-// console.log(id)
 
-onMounted(() => {
- const {data, isLoading, hasError } = useFetch(`http://localhost:3030/data/recipes/${id}`);
- console.log(data);
-});
+const id = route.params.id;
+const { data, isLoading, hasError } = useFetch(`http://localhost:3030/data/recipes/${id}`);
 </script>
 
 <template>
@@ -39,8 +34,11 @@ onMounted(() => {
         <p>Prepare: {{ data.description }}</p>
         <p>Preparing Time: {{ data.prepTime }} min</p>
         <p>Cooking Time: {{ data.cookTime }} min</p>
-        <button> Update</button>
-        <button>Delete</button>
+        <div class="btns">
+
+          <button class="btn-details"> Update</button>
+          <button class="btn-details">Delete</button>
+        </div>
       </article>
     </div>
   </div>
@@ -115,5 +113,12 @@ li {
   width: 150px;
   background-color: #830c0b;
   border: none;
+}
+.btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:0rem;
+  margin-top: 1rem;
 }
 </style>
