@@ -8,7 +8,7 @@ const recipeSchema = new Schema({
     img: { type: String },
     description: { type: String },
     difficulty: { type: String },
-    _ownerId: { type: ObjectId, ref: 'User' },
+    // _ownerId: { type: ObjectId, ref: 'User' },
 })
 
 const Recipe = model('Recipe', recipeSchema)

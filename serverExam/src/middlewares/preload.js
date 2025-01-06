@@ -2,9 +2,9 @@ const api = require('../services/recipeService')
 
 module.exports = (api) => async (req, res, next) => {
     const id = req.params.id;
-    const event = await api.getById(id);
+    const recipe = await api.getById(id);
 
-    if (event) {
+    if (recipe) {
         res.locals.recipe = recipe;
         next();
     } else {

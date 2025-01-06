@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-// import { useRouter } from 'vue-router';
 import { accessUser, authenticateUser } from '../services/auth';
 
 export const useUserStore = defineStore('userStore', () => {
@@ -22,7 +21,6 @@ export const useUserStore = defineStore('userStore', () => {
     if (!profile)
       return false;
     user.value = profile;
-    // router.push({ path: '/' });
   }
   // async function logout(){
   //   // 
