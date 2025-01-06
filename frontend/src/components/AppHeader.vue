@@ -11,8 +11,8 @@ const LINKS = [{
   label: 'About',
   name: 'about',
 }, {
-  label: 'Recipes',
-  name: 'recipes',
+  label: 'Create',
+  name: 'create',
 }, {
   label: 'Register',
   name: 'register',
@@ -43,10 +43,10 @@ function onSelect(name) {
         </router-link>
         <!-- <p>{{ userName }}</p> -->
       </ul>
-    </div>
-    <div class="user" v-if="username">
-      <p>Hello, {{ username }}</p>
-      <button class="btn" >Logout</button>
+      <div class="user" v-if="username">
+        <p>Hello, {{ username }}</p>
+        <button class="btn" >Logout</button>
+      </div>
     </div>
   </div>
   <div class="br"></div>
