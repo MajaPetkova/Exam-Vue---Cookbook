@@ -1,8 +1,10 @@
 <script setup>
 import { useVuelidate } from '@vuelidate/core';
 import { minLength, minValue, required } from '@vuelidate/validators';
-import { computed, ref } from 'vue';
-import { useFetch } from '../composables/useFetch';
+import { computed, onMounted, ref } from 'vue';
+// import { useFetch } from '../composables/useFetch';
+// import router from '../config/router';
+// import { useUserStore } from '../stores/useUserStore'; 
 
 // const { data, isLoading, hasError } = useFetch(`http://localhost:3030/data/recipes`);
 
@@ -30,7 +32,7 @@ const v$ = useVuelidate(rules, { formData });
 
 <template>
   <h2>Create Recipe</h2>
-  <form class="register-container">
+  <form class="register-container" @submit.prevent="createHandler">
     <label for="title">Title</label>
     <input id="title" v-model="formData.title" type="text" @blur="v$.formData.title.$touch">
     <div v-for="error of v$.formData.title.$errors" :key="error.$uid" class="input-errors">

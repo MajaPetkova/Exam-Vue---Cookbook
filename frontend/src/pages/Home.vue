@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
-import { useFetch } from '../composables/useFetch';
 import Spinner from '../components/Spinner.vue';
+import { useFetch } from '../composables/useFetch';
 // import { useUserStore } from '../stores/useUserStore';
 // const userStore = useUserStore();
 
@@ -10,14 +10,11 @@ const { data, isLoading, hasError } = useFetch(baseUrl);
 
 // const username = computed (() => userStore.user?.data?.username ?? '');
 const router = useRouter();
-// function singleProductHandler(id) {
-//   router.push({ path: `/recipes/${id}` });
-// }
 </script>
 
 <template>
   <div class="recipe-container">
-    <Spinner v-if="isLoading"/>
+    <Spinner v-if="isLoading" />
     <p v-if="hasError">
       Something went wrong
     </p>
@@ -27,8 +24,8 @@ const router = useRouter();
         <img :src="recipe.img" alt="">
         <!-- <h4>Recipe by: {{ username }}</h4> -->
         <router-link :to="{ name: 'recipeDetails', params: { id: recipe._id } }">
-           <button class="btn-details" @click="singleProductHandler(recipe._id)">See more</button>
-         </router-link>
+          <button class="btn-details" >See more</button>
+        </router-link>
       </article>
     </div>
   </div>
@@ -46,7 +43,6 @@ const router = useRouter();
   gap: 2rem;
   padding: 1rem;
 }
-
 article {
   width: 450px;
 }

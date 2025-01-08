@@ -1,5 +1,7 @@
 <template>
-  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class="spinnerContainer">
+     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+   </div>
 </template>
 
 <style>
@@ -11,8 +13,8 @@
 .lds-roller {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -92,6 +94,10 @@
     transform: rotate(360deg);
   }
 }
-
-
+.spinnerContainer{
+ height: 60vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 </style>
