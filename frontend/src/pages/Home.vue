@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { useFetch } from '../composables/useFetch';
+import Spinner from '../components/Spinner.vue';
 // import { useUserStore } from '../stores/useUserStore';
 // const userStore = useUserStore();
 
@@ -9,14 +10,14 @@ const { data, isLoading, hasError } = useFetch(baseUrl);
 
 // const username = computed (() => userStore.user?.data?.username ?? '');
 const router = useRouter();
-function singleProductHandler(id) {
-  router.push({ path: `/recipes/${id}` });
-}
+// function singleProductHandler(id) {
+//   router.push({ path: `/recipes/${id}` });
+// }
 </script>
 
 <template>
   <div class="recipe-container">
-    <progress v-if="isLoading" />
+    <Spinner v-if="isLoading"/>
     <p v-if="hasError">
       Something went wrong
     </p>
@@ -25,7 +26,9 @@ function singleProductHandler(id) {
         <h3>{{ recipe.title }}</h3>
         <img :src="recipe.img" alt="">
         <!-- <h4>Recipe by: {{ username }}</h4> -->
-        <button class="btn-details" @click="singleProductHandler(recipe._id)">See more</button>
+        <router-link :to="{ name: 'recipeDetails', params: { id: recipe._id } }">
+           <button class="btn-details" @click="singleProductHandler(recipe._id)">See more</button>
+         </router-link>
       </article>
     </div>
   </div>

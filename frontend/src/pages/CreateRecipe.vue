@@ -2,6 +2,9 @@
 import { useVuelidate } from '@vuelidate/core';
 import { minLength, minValue, required } from '@vuelidate/validators';
 import { computed, ref } from 'vue';
+import { useFetch } from '../composables/useFetch';
+
+// const { data, isLoading, hasError } = useFetch(`http://localhost:3030/data/recipes`);
 
 const formData = ref({
   title: '',
@@ -16,8 +19,8 @@ const rules = computed(() => ({
   formData: {
     title: { required, minLengthValue: minLength(3) },
     ingredients: { required },
-    prepTime: { required, minValueValue: minValue(1) },
-    cookTime: { required, minValueValue: minValue(1) },
+    prepTime: { required, minValueValue: minValue(5) },
+    cookTime: { required, minValueValue: minValue(5) },
     img: { required },
     description: { required },
   },

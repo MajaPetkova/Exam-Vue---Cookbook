@@ -15,6 +15,7 @@ export function useFetch(apiUrl) {
     catch (err) {
       console.error('Error fetching products', err);
       hasError.value = true;
+      return null;
     }
     finally {
       isLoading.value = false;
