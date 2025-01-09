@@ -34,7 +34,6 @@ const { data, isLoading, hasError } = useFetch(`http://localhost:3030/data/recip
         <p>Preparing Time: {{ data.prepTime }} min</p>
         <p>Cooking Time: {{ data.cookTime }} min</p>
         <div class="btns">
-
           <button class="btn-details"> Update</button>
           <button class="btn-details">Delete</button>
         </div>

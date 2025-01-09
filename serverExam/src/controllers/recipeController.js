@@ -7,7 +7,7 @@ const errorMapper = require('../util/errorMapper')
 router.get('/', async (req, res) => {
    res.json(await api.getAll())
 });
-router.post('/', isAuth(), async (req, res) => {
+router.post('/',async (req, res) => {
    const recipe = {
       title: req.body.title,
       ingredients: req.body.ingredients,
@@ -16,7 +16,7 @@ router.post('/', isAuth(), async (req, res) => {
       img: req.body.img,
       description: req.body.description,
       difficulty: req.body.difficulty,
-      _ownerId: req.user._id
+      // _ownerId: req.user._id
    }
    try {
       const result = await api.create(recipe)
