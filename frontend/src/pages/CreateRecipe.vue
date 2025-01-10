@@ -15,12 +15,12 @@ const formData = ref({
   img: '',
 });
 function createHandler() {
-  axios.post ('http://localhost:3030/data/recipes', formData.value)
+   const newRecipe = axios.post ('http://localhost:3030/data/recipes', formData.value)
     .then(res => console.log(res))
-    // if(res.status(200)){
-    //   router.push( {name: 'home'})
-    // }
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
+  if (newRecipe) {
+    router.push('/home');
+  }
 }
 const rules = computed(() => ({
   formData: {
