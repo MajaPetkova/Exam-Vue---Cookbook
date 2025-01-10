@@ -17,11 +17,12 @@ export const useUserStore = defineStore('userStore', () => {
     localStorage.setItem('authToken', profile.data.accessToken);
     router.push('/home');
   }
-  
   async function loginUser(formData) {
     const profile = await accessUser(formData);
-    if (!profile)
+    if (!profile) {
+      router.push ('/register');
       return false;
+    }
     user.value = profile;
     localStorage.setItem('authToken', profile.data.accessToken);
     router.push('/home');

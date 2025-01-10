@@ -15,18 +15,19 @@ const formData = ref({
   img: '',
 });
 function createHandler() {
-   const newRecipe = axios.post ('http://localhost:3030/data/recipes', formData.value)
+  const newRecipe = axios.post ('http://localhost:3030/data/recipes', formData.value)
     .then(res => console.log(res))
     .catch(err => console.log(err));
   if (newRecipe) {
     router.push('/home');
   }
 }
+
 const rules = computed(() => ({
   formData: {
-    title: { required, minLengthValue: minLength(3) },
+    title: { required, minLengthValue: minLength(4) },
     ingredients: { required },
-    description: { required },
+    description: { required, minLengthValue: minLength(10) },
     prepTime: { required, minValueValue: minValue(5) },
     cookTime: { required, minValueValue: minValue(5) },
     difficulty: { required },
@@ -76,8 +77,8 @@ const v$ = useVuelidate(rules, { formData });
     </div>
     <select for="desc" v-model="v$.formData.difficulty.$model">Difficulty
       <option disabled value="">
-          Please select one
-        </option>
+        Please select one
+      </option>
       <option value="easy">Easy</option>
       <option value="medium">Medium</option>
       <option value="hard">Hard</option>
@@ -94,7 +95,6 @@ const v$ = useVuelidate(rules, { formData });
         {{ error.$message }}
       </div>
     </div>
-   
     <button class="btn">Submit</button>
   </form>
 </template>
