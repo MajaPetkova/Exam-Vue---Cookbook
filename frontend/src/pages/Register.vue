@@ -7,7 +7,7 @@ import { useUserStore } from '../stores/useUserStore';
 const userStore = useUserStore();
 
 const formData = ref({
-  username: 'maja',
+  username: '',
   email: '',
   password: '',
 });

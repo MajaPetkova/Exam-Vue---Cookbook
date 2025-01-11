@@ -13,7 +13,7 @@ const formData = ref({
 });
 const rules = computed(() => ({
   formData: {
-    email: { required },
+    email: { required, minLengthValue: minLength(3) },
     password: { required, minLengthValue: minLength(3) },
   },
 }));

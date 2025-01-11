@@ -25,7 +25,6 @@ const username = computed (() => userStore.user?.data?.username ?? '');
 function onSelect(name) {
   isActive.value = isActive.value === name ? '' : name;
 }
-// const router = useRouter();
 </script>
 
 <template>
@@ -42,7 +41,7 @@ function onSelect(name) {
       </ul>
 
       <div class="user" v-if="username">
-        <router-link to="create" :class="[create === isActive ? 'active' : ''] ">Create</router-link>
+        <!-- <router-link to="create" class="">Create</router-link> -->
      
         <p>Hello, {{ username }}</p>
         <button @click="userStore.logout" class="btn">Logout</button>
