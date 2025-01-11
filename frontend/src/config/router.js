@@ -3,7 +3,7 @@ import About from '../pages/About.vue';
 import CreateRecipe from '../pages/CreateRecipe.vue';
 import Home from '../pages/Home.vue';
 import Login from '../pages/Login.vue';
-import NotFound from '../pages/NotFound.vue'
+import NotFound from '../pages/NotFound.vue';
 import RecipeDetails from '../pages/RecipeDetails.vue';
 import Register from '../pages/Register.vue';
 

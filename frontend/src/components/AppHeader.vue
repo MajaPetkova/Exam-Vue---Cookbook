@@ -37,12 +37,10 @@ function onSelect(name) {
             {{ link.label }}
           </li>
         </router-link>
-        <!-- <p>{{ userName }}</p> -->
       </ul>
 
       <div class="user" v-if="username">
-        <!-- <router-link to="create" class="">Create</router-link> -->
-     
+        <router-link to="create" :class="[create === isActive ? 'active' : '']">Create</router-link>
         <p>Hello, {{ username }}</p>
         <button @click="userStore.logout" class="btn">Logout</button>
       </div>
